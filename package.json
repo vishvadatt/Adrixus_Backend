@@ -1,0 +1,40 @@
+{
+  "name": "buser-institute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.902.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validation": "^3.0.6",
+    "fs": "^0.0.1-security",
+    "http-status": "^1.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "logger": "0.0.1",
+    "moment": "^2.29.1",
+    "mongodb": "^3.7.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "nodemailer": "^6.5.0",
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7",
+    "protect": "^0.5.0",
+    "request": "^2.88.2",
+    "twilio": "^3.61.0",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
