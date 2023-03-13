@@ -15,7 +15,6 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 db.connection().then((database) => {
 
     module.exports = database
