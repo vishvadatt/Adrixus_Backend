@@ -14,8 +14,6 @@ const bcrypt = require("bcrypt");
 const moment = require("moment");
 const jwt = require("jsonwebtoken");
 const fs = require('fs');
-const privateKey = fs.readFileSync('/etc/private.key',
-	{ encoding: 'utf8', flag: 'r' });
 
 exports.login = async (req, res, next) => {
   try {
@@ -31,11 +29,8 @@ exports.login = async (req, res, next) => {
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (isMatch) {
-      const currentDate = moment().format("YYYY-MM-DD[T]HH:mm:ss.SSS[Z]"); //YYYY-MM-DD[T]HH:mm:ss.SSS[Z]''  YYYY-MM-DDThh:mm:ssn
-      const token = encrypt(jwt.sign(
-        { _id: user._id, mobile_no: user.mobile_no },
-        privateKey, { algorithm: 'RS256' }
-      ));
+      
+      const token = jwt.sign({  _id: user._id, mobile_no: user.mobile_no }, "supersecret")
       delete user["password"];
       let obj = resPattern.successPattern(
         httpStatus.OK,
